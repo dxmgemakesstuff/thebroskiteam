@@ -1,0 +1,367 @@
+:root {
+    --bg: #050816;
+    --panel: rgba(255, 255, 255, 0.06);
+    --text: #f7f9ff;
+    --muted: #95a0c2;
+    --red: #ff4d57;
+    --blue: #4da3ff;
+    --border: rgba(255, 255, 255, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle at top, #13203f 0%, var(--bg) 45%, #03050d 100%);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body, button, input, textarea {
+    font-family: inherit;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(5, 8, 22, 0.92);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-link,
+.nav-btn {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.nav-btn {
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--red), var(--blue));
+}
+
+.hero,
+.teams,
+.modes,
+.join {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #dce6ff;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.hero h1,
+.section-heading h2,
+.join h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle,
+.team-card p,
+.mode-card p,
+.join p {
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    border-radius: 999px;
+    padding: 0.9rem 1.3rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: 700;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--red), #ff7d3b);
+    color: white;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.stat-pill {
+    min-width: 110px;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--panel);
+}
+
+.stat-pill strong {
+    display: block;
+    font-size: 1rem;
+}
+
+.stat-pill span {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.hero-card {
+    padding: 1.4rem;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(8, 13, 29, 0.8));
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.hero-card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.chip {
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.chip.red {
+    background: rgba(255, 77, 87, 0.18);
+    color: #ffd0d4;
+}
+
+.chip.blue {
+    background: rgba(77, 163, 255, 0.18);
+    color: #d7ebff;
+}
+
+.arena {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 0.5rem;
+    height: 220px;
+    margin-bottom: 1rem;
+}
+
+.arena-side {
+    border-radius: 18px;
+}
+
+.red-side {
+    background: linear-gradient(180deg, rgba(255, 77, 87, 0.95), rgba(111, 15, 25, 0.95));
+}
+
+.blue-side {
+    background: linear-gradient(180deg, rgba(77, 163, 255, 0.95), rgba(15, 57, 111, 0.95));
+}
+
+.arena-center {
+    border-radius: 18px;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,0.2) 0 8px, transparent 8px 16px);
+}
+
+.section-heading {
+    margin-bottom: 1.5rem;
+}
+
+.team-grid,
+.modes-grid {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.team-card,
+.mode-card,
+.join-card {
+    padding: 1.35rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+}
+
+.red-card {
+    box-shadow: inset 0 0 0 1px rgba(255, 77, 87, 0.25);
+}
+
+.blue-card {
+    box-shadow: inset 0 0 0 1px rgba(77, 163, 255, 0.25);
+}
+
+.team-card h3,
+.mode-card h3 {
+    margin-bottom: 0.6rem;
+}
+
+.team-card ul {
+    margin-top: 0.8rem;
+    padding-left: 1.2rem;
+    color: var(--muted);
+}
+
+.join-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--blue);
+    border-color: var(--blue);
+}
+
+.footer {
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    .hero,
+    .join-card {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 3rem;
+    }
+}
+        grid-template-columns: 1fr;
+        padding: 2.5rem 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .features h2,
+    .pricing h2,
+    .about-content h2,
+    .contact h2 {
+        font-size: 1.75rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .features-grid,
+    .pricing-grid,
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
